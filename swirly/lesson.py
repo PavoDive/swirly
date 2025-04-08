@@ -19,7 +19,7 @@ def list_lessons():
 
 def load_lesson_file(name):
     with importlib.resources.files("swirly.lessons").joinpath(
-            f"{name}.yaml").open("r") as f:
+            f"{name}").open("r") as f:
         return yaml.safe_load(f)
 
 
