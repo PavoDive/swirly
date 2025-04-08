@@ -1,0 +1,39 @@
+title: Merging and Joining
+slug: merging
+difficulty: intermediate
+author: Pavodive
+preamble: |
+  import pandas as pd
+  df1 = pd.DataFrame({'id1': [1, 2], 'x': ['a', 'b'], 'group': ['A', 'B']})
+  df2 = pd.DataFrame({'id2': [2, 3], 'y': ['c', 'd'], 'group': ['B', 'C']})
+  df3 = pd.DataFrame({
+      'first': ['John', 'Jane'],
+      'last': ['Smith', 'Doe'],
+      'score': [90, 85]
+  })
+  df4 = pd.DataFrame({
+      'first_name': ['Jane', 'Alice'],
+      'last_name': ['Doe', 'White'],
+      'grade': ['B', 'A']
+  })
+description: |
+  Learn to combine DataFrames using different kinds of merges across matching and non-matching keys.
+
+steps:
+  - prompt: "Merge df1 and df2 specifying left_on='id1' and right_on='id2'."
+    answer: pd.merge(df1, df2, left_on='id1', right_on='id2')
+
+  - prompt: "Merge df3 and df4 using 'first/first_name' and 'last/last_name' as keys."
+    answer: pd.merge(df3, df4, left_on=['first', 'last'], right_on=['first_name', 'last_name'])
+
+  - prompt: "Merge df1 and df2 using inner join on 'group'."
+    answer: pd.merge(df1, df2, on='group')
+
+  - prompt: "Merge with left join on 'group'."
+    answer: pd.merge(df1, df2, how='left', on='group')
+
+  - prompt: "Merge with outer join on 'group'."
+    answer: pd.merge(df1, df2, how='outer', on='group')
+
+  - prompt: "Concatenate df3 and df4 vertically (along rows)."
+    answer: pd.concat([df3, df4])

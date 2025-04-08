@@ -1,0 +1,25 @@
+title: Boolean Filtering
+slug: boolean_filtering
+difficulty: beginner
+author: Pavodive
+preamble: |
+  import pandas as pd
+  df = pd.DataFrame({'a': [-1, 0, 2, 4], 'b': [4, 19, 3, -2]})
+description: |
+  Learn how to filter rows of a DataFrame using boolean conditions and logical combinations.
+
+steps:
+  - prompt: "A DataFrame 'df' was created. Filter its rows where column 'a' is greater than 1."
+    answer: "df[df['a'] > 1]"
+
+  - prompt: "Filter rows where column 'b' equals 4."
+    answer: "df[df['b'] == 4]"
+
+  - prompt: "Filter rows where column 'a' > 1 and column 'b' < -1."
+    answer: "df[(df['a'] > 1) & (df['b'] < -1)]"
+
+  - prompt: "Filter rows where column 'a' > 1 or column 'b' > 3."
+    answer: "df[(df['a'] > 1) | (df['b'] > 3)]"
+
+  - prompt: "Reset the index of the filtered DataFrame."
+    answer: "df[df['a'] > 1].reset_index(drop=True)"

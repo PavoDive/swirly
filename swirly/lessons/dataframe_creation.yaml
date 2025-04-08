@@ -1,0 +1,30 @@
+title: DataFrame Creation
+slug: dataframe_creation
+difficulty: beginner
+author: Pavodive
+description: |
+  This lesson introduces Python's pandas DataFrame object: creation,
+  and basic operations: column names, values of a column, shape,
+  adding a new column and displaying a dataframe.
+
+steps:
+- prompt: "Create a DataFrame 'df' from the dictionary {'a': [1, 2], 'b': [3, 4]}."
+  answer: "pd.DataFrame({'a': [1, 2], 'b': [3, 4]})"
+  setup: "df = pd.DataFrame({'a': [1, 2], 'b': [3, 4]})"
+  var: df
+
+- prompt: "Display the column names of the DataFrame `df`."
+  answer: df.columns
+
+- prompt: "Display the values of the `a` column."
+  answer: df['a']
+
+- prompt: "Display the shape of `df`."
+  answer: df.shape
+
+- prompt: "Add a new column `c = a + b` to `df`."
+  answer: df['c'] = df['a'] + df['b']
+  var: df
+
+- prompt: "View the updated DataFrame."
+  answer: df

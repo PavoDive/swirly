@@ -1,0 +1,27 @@
+title: Handling Missing Data
+slug: missing
+difficulty: intermediate
+author: Pavodive
+preamble: |
+  import pandas as pd
+  import numpy as np
+  df = pd.DataFrame({
+      'a': [1, np.nan, 3],
+      'b': [4, 5, np.nan],
+      'c': ['x', 'y', 'z']
+  })
+description: |
+  Learn to detect, drop, and fill missing values (NaNs) in your data.
+
+steps:
+  - prompt: "A DataFrame 'df' was created. Return rows of df where column 'a' is null."
+    answer: "df[df['a'].isnull()]"
+
+  - prompt: "Return rows where column 'b' is not null."
+    answer: "df[df['b'].notnull()]"
+
+  - prompt: "Drop rows with any missing data."
+    answer: "df.dropna()"
+
+  - prompt: "Fill missing values in column 'a' with 0."
+    answer: "df['a'].fillna(0)"

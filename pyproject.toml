@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swirly"
+version = "0.1.0"
+description = "CLI-based interactive trainer for learning pandas."
+readme = "README.md"
+authors = [{ name = "Pavodive", email = "pavodive@gmail.com" }]
+keywords = ["pandas", "education", "CLI", "interactive"]
+dependencies = [
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+    "seaborn>=0.12",
+    "matplotlib>=3.5"
+]
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+
+[project.scripts]
+swirly = "swirly.cli:main"
+
+[tool.setuptools.package-data]
+"swirly.lessons" = ["*.yaml"]
+"swirly" = ["lessons/*.yaml"]
+
+[tool.setuptools.include-package-data]
+ = true

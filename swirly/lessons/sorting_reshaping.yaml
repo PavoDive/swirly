@@ -1,0 +1,29 @@
+title: Sorting and Reshaping
+slug: sorting
+difficulty: intermediate
+author: Pavodive
+preamble: |
+  import pandas as pd
+  df = pd.DataFrame({
+      'a': [3, 1, 2],
+      'b': [9, 5, 7],
+      'c': ['x', 'y', 'z']
+  }, index=['row3', 'row1', 'row2'])
+description: |
+  Learn to sort rows, columns and reshape data using transpose and pivot.
+
+steps:
+  - prompt: "A DataFrame 'df' was created. Sort df by column 'a' ascending."
+    answer: "df.sort_values('a')"
+
+  - prompt: "Sort df by column 'b' descending."
+    answer: "df.sort_values('b', ascending=False)"
+
+  - prompt: "Transpose df."
+    answer: "df.T"
+
+  - prompt: "Sort df by index."
+    answer: "df.sort_index()"
+
+  - prompt: "Set column 'b' as index."
+    answer: "df.set_index('b')"

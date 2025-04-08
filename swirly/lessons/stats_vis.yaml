@@ -1,0 +1,24 @@
+title: Stats and Visualization
+slug: stats_vis
+difficulty: intermediate
+author: Pavodive
+preamble: |
+  import seaborn as sns
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  df = sns.load_dataset("iris")
+description: |
+  Learn basic statistical summaries and create simple plots using pandas.
+
+steps:
+  - prompt: "Display the summary statistics of the iris dataset, which has been loaded as 'df'."
+    answer: df.describe()
+
+  - prompt: "Show the unique values and their counts in the 'species' column."
+    answer: df['species'].value_counts()
+
+  - prompt: "Plot a histogram of the 'sepal_length' column."
+    answer: df['sepal_length'].plot.hist()
+
+  - prompt: "Create a boxplot of the entire DataFrame."
+    answer: df.plot.box()

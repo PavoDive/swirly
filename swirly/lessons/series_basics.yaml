@@ -1,0 +1,30 @@
+title: Series Basics
+slug: series_basics
+difficulty: beginner
+author: Pavodive
+description: |
+  This lesson introduces Python's pandas Series object: creation,
+  indexing, and accessing its basic attributes.
+
+steps:
+- prompt: "Import pandas using the alias 'pd'."
+  answer: pd
+  setup: import pandas as pd
+  var: pd
+
+- prompt: "Create a Series 's' with values [10, 20, 30]."
+  answer: pd.Series([10, 20, 30])
+  setup: s = pd.Series([10, 20, 30])
+  var: s
+
+- prompt: "Get the first element of the Series `s`."
+  answer: s[0]
+
+- prompt: "Get the type of `s`."
+  answer: type(s)
+
+- prompt: "Display the index of the Series `s`."
+  answer: s.index
+
+- prompt: "Display the values of `s`."
+  answer: s.values

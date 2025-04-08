@@ -1,0 +1,29 @@
+title: Indexing and Selection
+slug: indexing
+difficulty: beginner
+author: Pavodive
+preamble: |
+  import pandas as pd
+  df = pd.DataFrame({'a': [1, 2, 3], 'b': [4, 5, 6]})
+description: |
+  Learn to select rows and columns using `.loc`, `.iloc`, and basic indexing methods.
+
+steps:
+  - prompt: "A DataFrame 'df' was created. Display the row at position 1 of df."
+    answer: df.iloc[1]
+
+  - prompt: "Display the first row of df using .head()."
+    answer: df.head(1)
+
+  - prompt: "Display column 'a' using dot notation."
+    answer: df.a
+
+  - prompt: "Use .loc[] to select all rows of column 'b'."
+    answer: "df.loc[:, 'b']"
+
+  - prompt: "Use .iloc[] to select value at row 0, column 1."
+    answer: df.iloc[0, 1]
+
+  - prompt: "Assign the value 100 to df['a'][0]."
+    answer: "df.loc[0, 'a'] = 100"
+    var: df

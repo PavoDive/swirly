@@ -1,0 +1,22 @@
+title: GroupBy and Aggregation
+slug: groupby
+difficulty: intermediate
+author: Pavodive
+preamble: |
+  import pandas as pd
+  df = pd.DataFrame({'group': ['A', 'K', 'F', 'A', 'F'], 'value': [10, 5, 80, 20, 120]})
+description: |
+  Learn to group data and apply aggregation functions using pandas.
+
+steps:
+  - prompt: "A DataFrame 'df' was created. Group it by column 'group' and calculate sum."
+    answer: "df.groupby('group').sum()"
+
+  - prompt: "Group by column 'group' and get mean of 'value'."
+    answer: "df.groupby('group')['value'].mean()"
+
+  - prompt: "Use .agg to compute both sum and mean on column 'value'."
+    answer: "df.groupby('group')['value'].agg(['sum', 'mean'])"
+
+  - prompt: "Reset index after groupby."
+    answer: "df.groupby('group')['value'].sum().reset_index()"
