@@ -4,17 +4,24 @@
 
 import yaml
 import os
+import importlib.resources
 
 
-LESSON_PATH = "swirly/lessons"
+# LESSON_PATH = "swirly/lessons"
 
 
 def list_lessons():
-    return [
-        f[:-5]
-        for f in os.listdir(LESSON_PATH)
-        if f.endswith(".yaml")
-    ]
+    with importlib.resources.files("swirly.lessons") as lesson_dir:
+        return [
+            f.stem for f in lesson_dir.iterdir()
+            if f.suffix(".yaml")
+        ]
+
+
+def load_lesson_file(name):
+    with importlib.resources.files("swirly.lessons").joinpath(
+            f"{name}.yaml").open("r") as f:
+        return yaml.safe_load(f)
 
 
 class Lesson:
@@ -23,9 +30,8 @@ class Lesson:
         self.steps = steps
 
     @staticmethod
-    def load(path):
-        with open(path) as f:
-            raw = yaml.safe_load(f)
+    def load(name):
+        raw = load_lesson_file(name)
         if "steps" in raw:
             metadata = dict(raw)
             steps = metadata.pop("steps")
