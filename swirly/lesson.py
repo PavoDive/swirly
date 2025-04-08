@@ -3,7 +3,6 @@
 
 
 import yaml
-import os
 import importlib.resources
 
 
@@ -14,7 +13,7 @@ def list_lessons():
     with importlib.resources.files("swirly.lessons") as lesson_dir:
         return [
             f.stem for f in lesson_dir.iterdir()
-            if f.suffix(".yaml")
+            if f.suffix == ".yaml"
         ]
 
 
