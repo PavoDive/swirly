@@ -10,16 +10,16 @@ import importlib.resources
 
 
 def list_lessons():
-    with importlib.resources.files("swirly.lessons") as lesson_dir:
-        return [
-            f.stem for f in lesson_dir.iterdir()
-            if f.suffix == ".yaml"
-        ]
+    lesson_dir = importlib.resources.files("swirly.lessons")
+    return [
+        f.stem for f in lesson_dir.iterdir()
+        if f.suffix == ".yaml"
+    ]
 
 
 def load_lesson_file(name):
     with importlib.resources.files("swirly.lessons").joinpath(
-            f"{name}").open("r") as f:
+            name).open("r") as f:
         return yaml.safe_load(f)
 
 
