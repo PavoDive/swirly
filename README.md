@@ -74,7 +74,7 @@ The `steps` are the actual questions of the lesson. A step has the following fie
 - [Required] A **prompt**, the text asked to the user. Ideally it provides hints to the names of objects required to complete the task.
 - [Required] An **answer**. This is the code that will produce the expected result. As explained before, **Swirly** does not compare the user's input to the expected answer, but the _results_ of the user input against the _results_ of the expected answer.
 - [Optional] A **setup**, this is the expression that needs to be exectued silently by **Swirly** to produce the expected result. This is particularly used when an assignment is required, see the example below.
-. [Optional] A **var**: When the step involves assigning a vale (for instance `s = pd.Series(...)`), set `var` to the variable name (`s` in this case). This tells **Swirly** to evaluate the users's input using `exec()`, then fetch `env.vars['s']` and compare it to the expected result. It must match the name assigned in the user's code and in the `setup` part of the step.
+- [Optional] A **var**: When the step involves assigning a value (for instance `s = pd.Series(...)`), set `var` to the variable name (`s` in this case). This tells **Swirly** to evaluate the users's input using `exec()`, then fetch `env.vars['s']` and compare it to the expected result. It must match the name assigned in the user's code and in the `setup` part of the step.
 
 > If `var` is not provided, **Swirly** assumes the answer is an expression and uses `eval()` (instead of `exec()`) to capture and compare results.
 

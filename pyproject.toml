@@ -25,5 +25,5 @@ swirly = "swirly.cli:main"
 "swirly.lessons" = ["*.yaml"]
 "swirly" = ["lessons/*.yaml"]
 
-[tool.setuptools.include-package-data]
- = true
+[tool.setuptools]
+include-package-data = true
