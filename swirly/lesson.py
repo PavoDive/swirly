@@ -18,6 +18,7 @@ def list_lessons():
 
 
 def load_lesson_file(name):
+    print(name)
     with importlib.resources.files("swirly.lessons").joinpath(
             name).open("r") as f:
         return yaml.safe_load(f)
@@ -30,6 +31,7 @@ class Lesson:
 
     @staticmethod
     def load(name):
+        print(name)
         raw = load_lesson_file(name)
         if "steps" in raw:
             metadata = dict(raw)

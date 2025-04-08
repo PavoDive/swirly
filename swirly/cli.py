@@ -34,7 +34,7 @@ def main():
     if os.path.exists(state_file):
         env = LessonEnv.load(state_file)
         info(env)
-        lesson = Lesson.load(f"swirly/lessons/{env.lesson}.yaml")
+        lesson = Lesson.load(f"{env.lesson}.yaml")
         print(f"🔄 Resuming lesson: {env.lesson}\n")
     else:
         from swirly.lesson import list_lessons
@@ -54,7 +54,7 @@ def main():
         env = LessonEnv()
         info(env)
         env.lesson = lesson_name
-        lesson = Lesson.load(f"swirly/lessons/{lesson_name}.yaml")
+        lesson = Lesson.load(f"{lesson_name}.yaml")
         env.save(state_file)
 
         if lesson.metadata.get("preamble"):

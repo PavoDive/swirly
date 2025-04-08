@@ -10,7 +10,7 @@ def bye(env): sys.exit(0)
 
 def next(env):
     from swirly.lesson import Lesson
-    lesson = Lesson.load(f"swirly/lessons/{env.lesson}.yaml")
+    lesson = Lesson.load(f"{env.lesson}.yaml")
     step = lesson.current_step(env.progress)
 
     print(f"💡 Correct answer: {step.get('setup') or step['answer']}")
@@ -45,7 +45,7 @@ def play(env):
 
 def reveal(env):
     from swirly.lesson import Lesson
-    lesson = Lesson.load(f"swirly/lessons/{env.lesson}.yaml")
+    lesson = Lesson.load(f"{env.lesson}.yaml")
     step = lesson.current_step(env.progress)
     print(f"💡 Expected answer: {step.get('setup') or step['answer']}")
 
