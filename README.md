@@ -15,7 +15,7 @@ There are two possible ways to install and run **Swirly**: in a virtual environm
 ## 🚀 Install in a virtual environment
 
 ```bash
-git clone https://github.com/YOURUSER/swirly.git
+git clone https://github.com/PavoDive/swirly.git
 cd swirly
 python3 -m venv .venv
 source .venv/bin/activate
@@ -26,7 +26,7 @@ swirly
 ## 🪄 Alternative: install globally with pipx
 
 ```bash
-pipx install git+https://github.com/YOURUSER/swirly.git swirly
+pipx install git+https://github.com/PavoDive/swirly.git swirly
 ```
 
 # How to use Swirly

@@ -1,7 +1,7 @@
 title: Series Basics
 slug: series_basics
 difficulty: beginner
-author: Pavodive
+author: PavoDive
 description: |
   This lesson introduces Python's pandas Series object: creation,
   indexing, and accessing its basic attributes.

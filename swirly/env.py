@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) 2024 Your Name
+# Copyright (C) 2024 PavoDive
 
 
 import pickle

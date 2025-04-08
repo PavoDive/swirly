@@ -1,7 +1,7 @@
 title: Sorting and Reshaping
 slug: sorting
 difficulty: intermediate
-author: Pavodive
+author: PavoDive
 preamble: |
   import pandas as pd
   df = pd.DataFrame({

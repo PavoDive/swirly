@@ -1,7 +1,7 @@
 title: DataFrame Creation
 slug: dataframe_creation
 difficulty: beginner
-author: Pavodive
+author: PavoDive
 description: |
   This lesson introduces Python's pandas DataFrame object: creation,
   and basic operations: column names, values of a column, shape,

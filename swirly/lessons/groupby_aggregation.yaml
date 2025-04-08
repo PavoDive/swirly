@@ -1,7 +1,7 @@
 title: GroupBy and Aggregation
 slug: groupby
 difficulty: intermediate
-author: Pavodive
+author: PavoDive
 preamble: |
   import pandas as pd
   df = pd.DataFrame({'group': ['A', 'K', 'F', 'A', 'F'], 'value': [10, 5, 80, 20, 120]})
